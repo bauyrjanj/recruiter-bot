@@ -1,0 +1,87 @@
+version: "2.0"
+
+stories:
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: thanks
+  steps:
+  - intent: gratitude
+  - action: utter_welcome
+
+- story: inquire open positions technical
+  steps:
+  - intent: inquire_open_positions
+  - action: utter_technical_or_business
+  - intent: inform_role_type
+  - action: action_check_positions
+  - slot_was_set:
+    - role_types: "technical"
+  - action: utter_open_technical_positions
+
+- story: inquire open positions any
+  steps:
+  - intent: inquire_open_positions
+  - action: utter_technical_or_business
+  - intent: inform_role_type
+  - action: action_check_positions
+  - slot_was_set:
+    - role_types: "any"
+  - action: utter_open_technical_positions
+
+- story: inquire open positions business
+  steps:
+  - intent: inquire_open_positions
+  - action: utter_technical_or_business
+  - intent: inform_role_type
+  - action: action_check_positions
+  - slot_was_set:
+    - role_types: "business"
+  - action: utter_open_business_positions
+
+- story: check application status interview
+  steps:
+  - intent: check_application_status
+  - action:  action_check_status
+  - slot_was_set:
+    - status : "interview"
+  - action: utter_check_application_status
+  - action: utter_status_interview
+
+- story: check application status rejected
+  steps:
+  - intent: check_application_status
+  - action: action_check_status
+  - slot_was_set:
+    - status: "rejected"
+  - action: utter_check_application_status
+  - action: utter_status_rejected
+
+- story: check application status unknown
+  steps:
+  - intent: check_application_status
+  - action: action_check_status
+  - slot_was_set:
+    - status: "unknown"
+  - action: utter_check_application_status
+  - action: utter_status_unknown
+
+- story: check application status received
+  steps:
+  - intent: check_application_status
+  - action: action_check_status
+  - slot_was_set:
+    - status: "received"
+  - action: utter_check_application_status
+  - action: utter_status_received
+
+- story: check application status no name
+  steps:
+  - intent: check_application_status
+  - action: action_check_status
+  - slot_was_set:
+    - status: "noname"
+  - action: utter_provide_name
+

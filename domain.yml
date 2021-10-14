@@ -1,0 +1,107 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - inquire_open_positions
+  - inform_role_type
+  - bot_challenge
+  - gratitude
+  - check_application_status
+
+entities:
+  - role_type
+  - name
+
+slots:
+  status:
+    type: categorical
+    values:
+    - received
+    - rejected
+    - interview
+    - unknown
+    - noname
+    influence_conversation: true
+  positions:
+    type: text
+    influence_conversation: false
+  role_types:
+    type: categorical
+    values:
+    - technical
+    - business
+    - any
+    influence_conversation: true
+  role_type:
+    type: text
+    influence_conversation: false
+  name:
+    type: text
+    influence_conversation: false
+
+responses:
+  utter_greet:
+  - text: "hi, I'm a recruiting bot. How can I help?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by a very cool open source framework for Conversational AI."
+
+  utter_welcome:
+  - text: "You are welcome!"
+  - text: "Of course, don't mention it. I am glad I was able to help!"
+  - text: "My pleasure, you are very welcome!"
+
+  utter_provide_name:
+  - text: "I am sorry, I didn't get your name!"
+
+  utter_check_application_status:
+  - text: "Hi {name}!, Let me check that for you"
+
+  utter_technical_or_business:
+  - text: "Are you looking for a technical or a business role?"
+
+  utter_status_interview:
+  - text: "{name}, your application is scheduled for an interview. Please wait to hear from your recruiter!"
+
+  utter_status_rejected:
+  - text: "{name}, it was a difficult decision but we have decided to move forward with another candidate whose skills and experience best meet the current needs of the business."
+
+  utter_status_unknown:
+  - text: "{name}, I am sorry but I couldn't find any information associated with your job application. Please call your recruiter!"
+
+  utter_status_received:
+  - text: "Yes, your application has been received."
+
+  utter_open_technical_positions:
+  - text: "{positions} are the open positions"
+
+  utter_open_business_positions:
+  - text: "Currently there is no any open position for the business roles. Please check again later!"
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_iamabot
+  - utter_check_application_status
+  - utter_technical_or_business
+  - utter_status_interview
+  - utter_status_rejected
+  - utter_status_unknown
+  - utter_status_received
+  - utter_open_technical_positions
+  - utter_open_business_positions
+  - utter_provide_name
+  - utter_welcome
+  - action_check_status
+  - action_check_positions
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

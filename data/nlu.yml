@@ -1,0 +1,114 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- regex: name
+  examples: |
+    - ^[A-Z][a-zA-Z]+$
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: inquire_open_positions
+  examples: |
+    - like to know which positions are open right now
+    - want to know about the open positions
+    - want to know which positions are open right now
+    - please tell me which positions are open right now
+    - looking for open positions
+    - any open positions?
+    - tell me about the open positions
+
+
+- intent: inform_role_type
+  examples: |
+    - [technical](role_type) role
+    - [technical](role_type)
+    - [technical](role_type) one
+    - [business](role_type) role
+    - [business](role_type)
+    - [leadership](role_type)
+    - [non-technical](role_type)
+    - [non-tech](role_type) role
+    - [non-technical](role_type) role
+    - [not technical](role_type)
+    - [any](role_type)
+    - [anyhting](role_type)
+    - [tech](role_type)
+    - [engineering](role_type)
+    - [biz](role_type)
+    - am looking for a [technical](role_type) role
+    - interested in an [engineering](role_type) role
+    - how about [technical](role_type)?
+    - how about [business](role_type)?
+    - how about [any](role_type)?
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: gratitude
+  examples: |
+    - thanks
+    - thank you
+    - thx
+    - tanks
+    - thanks a lot
+    - appreciate it
+
+- intent: check_application_status
+  examples: |
+    - my name is [Ali](name) Park. I applied for a job and would like to know when I'll hear back
+    - this is [Ben](name), when will I hear back
+    - status of my application, this is [Jane](name)
+    - what is the status of my job application
+    - when will I hear back about my job application
+    - this is [John](name), check the status of my job application
