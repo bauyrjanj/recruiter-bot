@@ -27,9 +27,8 @@ The bot should allow for two kinds of conversations:
 “Yes, your application has been received.”
 
 
-# 2. Development
+# 2. Installation
 
-## 2.1 Installation of Rasa Open Source
 ```
 # First create a dedicated directory for the project under the current working directory
 mkdir my_project
@@ -60,8 +59,13 @@ Install Visual Studio Build Tools >=14.0
 
 Finally, installed rasa with the following code. 
 ```
+# Install Rasa 
 pip install rasa==2.8.0
 
+# Install Spacy dependencies for Rasa
+pip install rasa[spacy]==2.8.0
+
+# Install Rasa SDK for the custom actions server
 pip install rasa_sdk==2.8.0
 ```
 
