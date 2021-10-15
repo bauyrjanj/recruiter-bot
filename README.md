@@ -119,5 +119,5 @@ Please find the results of the test in the results directory of this repo. For t
 
 I have deployed Rasa X and uploaded the model for interactive learning. It is a perfect way to improve the assistance. Please click on the below link to interact with the model in an interactive learning mode.
 
-http://34.72.55.157:8000/guest/conversations/production/33cea588f2a2454eb58f59223c57b441
+http://34.70.143.168:8000/guest/conversations/production/000f6a7b3be44612a2ed20f40decb573
 

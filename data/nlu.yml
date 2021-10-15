@@ -64,7 +64,6 @@ nlu:
     - any open positions?
     - tell me about the open positions
 
-
 - intent: inform_role_type
   examples: |
     - [technical](role_type) role
